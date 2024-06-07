@@ -23,15 +23,15 @@ class homePage extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-              Theme.of(context).colorScheme.primary,
-              Theme.of(context).colorScheme.primary,
-              Theme.of(context).colorScheme.secondary,
+              Theme.of(context).colorScheme.onPrimary,
+              Theme.of(context).colorScheme.onPrimary,
+              Theme.of(context).colorScheme.onInverseSurface,
             ])
           ),
           child: Column(
             children: [
               MyAppBar(),
-              SizedBox(height: 20),
+              SizedBox(height: 0),
               SizedBox(height: 444, width: double.infinity, child: MyListView()),
               SizedBox(height: 100)
             ],

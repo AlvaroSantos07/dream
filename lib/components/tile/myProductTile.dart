@@ -39,17 +39,16 @@ class MyProductTile extends StatelessWidget {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-              Colors.deepPurple,
-              Colors.deepPurple,
-              Colors.deepPurple,
-              Colors.deepPurple,
-              Colors.black.withOpacity(0.3),
-              Colors.black.withOpacity(0.3),
-              Colors.black.withOpacity(0.3),
-              Colors.black.withOpacity(0.3),
+              Theme.of(context).colorScheme.onInverseSurface,
+              Theme.of(context).colorScheme.onInverseSurface,
+              Theme.of(context).colorScheme.onInverseSurface,
+              Theme.of(context).colorScheme.onInverseSurface,
+              Theme.of(context).colorScheme.onPrimary.withOpacity(0.8),
+              Theme.of(context).colorScheme.onPrimary.withOpacity(0.8),
+              Theme.of(context).colorScheme.onPrimary.withOpacity(0.8),
             ]),
             borderRadius: BorderRadius.circular(20),
-            boxShadow: [_led(Color.fromARGB(255, 117, 117, 117))]),
+            boxShadow: [_led(Theme.of(context).colorScheme.secondary)]),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +70,7 @@ class MyProductTile extends StatelessWidget {
                         children: [
                           Text(
                             "${product.name}",
-                            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
+                            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onSecondary),
                           ),
                         ],
                       ),
@@ -79,7 +78,7 @@ class MyProductTile extends StatelessWidget {
                     Container(
                       height: 2,
                       width: 160,
-                      color: Colors.deepPurple,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 26),
@@ -88,16 +87,16 @@ class MyProductTile extends StatelessWidget {
                         children: [
                           Column(
                             children: [
-                              Text(product.description, style: TextStyle(color: Colors.grey),),
+                              Text(product.description, style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),),
                               Row(children: [
                                 Text(
                                   "R\$ ",
-                                  style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                                  style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onSecondary,)
                                 ),
                                 Text(
                                   product.price.toString(),
                                   style: TextStyle(
-                                      color: Colors.green, fontWeight: FontWeight.bold),
+                                      color: Theme.of(context).colorScheme.onTertiary, fontWeight: FontWeight.bold),
                                 )
                               ]),
                               SizedBox(height: 25,)
@@ -119,7 +118,7 @@ class MyProductTile extends StatelessWidget {
                                _led(Color.fromARGB(255, 202, 202, 202))
                               ]
                             ),
-                              child: IconButton(onPressed: ()=>addCart(context), icon: Icon(Icons.add)),
+                              child: IconButton(onPressed: ()=>addCart(context), icon: Icon(Icons.add, color: Colors.black,)),
                             )
                         ],
                       ),

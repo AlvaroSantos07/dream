@@ -18,6 +18,7 @@ class _MyMainScreenState extends State<MyMainScreen> {
   int currentIndex = 0;
   bool _isVisible = true;
   late ScrollController _scrollController;
+  bool teste = false;
 
   @override
   void initState() {
@@ -31,6 +32,30 @@ class _MyMainScreenState extends State<MyMainScreen> {
     });
   }
 
+
+  Future<bool> confirmExit() async {
+    showDialog(
+      barrierDismissible: false,
+      context: context, builder: 
+    (context) => AlertDialog(
+      content: 
+        Text("Deseja mesmo sair? "),
+        actions: <Widget>[
+          MaterialButton(
+            child: Text("Cancelar"),
+            onPressed: () => {teste = false, Navigator.of(context).pop(teste)},
+            ),
+
+          MaterialButton(
+            child: Text("Sair"),
+            onPressed: () => {teste = true, Navigator.of(context).pop(teste)},
+          )
+        ],
+    )
+    );
+    return teste;
+  }
+
   @override
   Widget build(BuildContext context) {
     var pageList = <Widget>[
@@ -42,7 +67,14 @@ class _MyMainScreenState extends State<MyMainScreen> {
       
     ];
     
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () async {
+       return confirmExit();
+      },
+      child:  
+    
+    Scaffold(
+      
       backgroundColor: Colors.grey[140],
       body: Stack(
         children: [
@@ -84,6 +116,7 @@ class _MyMainScreenState extends State<MyMainScreen> {
           ),
         ],
       ),
+    )
     );
   }
 }
