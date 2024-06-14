@@ -48,7 +48,7 @@ class _LoginSpaceState extends State<LoginSpace> {
 
 Widget _form(TextEditingController email, TextEditingController senha) {
   return Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.all(5.0),
     child: Column(
       children: [
         _textInfo(
@@ -60,13 +60,24 @@ Widget _form(TextEditingController email, TextEditingController senha) {
         ),
         TextField(
           controller: email,
+          style: TextStyle(color: Colors.black),
           decoration: InputDecoration(
-            labelText: 'Digite seu nome de Usuário',
-            hoverColor: Colors.blue.shade900,
             border: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.blue)
+              borderSide: BorderSide(color: Colors.black)
             ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black)
+            ),
+            labelText: 'Digite seu nome de Usuário',
+            labelStyle: TextStyle(color: Colors.black),
+            hoverColor: Colors.blue.shade900,
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.black
+              ),
+            
           ),
+        ),
         ),
         SizedBox(height: 10),
         _textInfo(
@@ -80,10 +91,22 @@ Widget _form(TextEditingController email, TextEditingController senha) {
           controller: senha,
           obscureText: true,
           decoration: InputDecoration(
+
             labelText: 'Digite sua senha',
+            labelStyle: TextStyle(color: Colors.black),
             border: OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.blue
+              ),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.black
+              )
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.black
               )
             ),
             hoverColor: Colors.blue[900],
@@ -97,7 +120,7 @@ Widget _form(TextEditingController email, TextEditingController senha) {
 
 Widget _textInfo(String text, Widget anyIcon) {
   return Padding(
-    padding: EdgeInsets.all(15),
+    padding: EdgeInsets.only(top: 15, bottom: 8),
     child: Row(
       children: [
         anyIcon,
@@ -158,17 +181,17 @@ Future<void> _login(TextEditingController emailController, TextEditingController
     Navigator.pushNamed(context, "/MainPage");
   } on FirebaseAuthException catch (e) {
     String message;
-    if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+    if (e.code == 'usuario não encontrado' || e.code == 'Senha Invalida') {
       message = "Usuário ou senha incorretos";
     } else {
-      message = "Erro ao fazer login: ${e.message}";
+      message = "Erro ao fazer login: Email ou senha Invalidos";
     }
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message), backgroundColor: Colors.red),
     );
   } catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("Erro ao fazer login: $e"), backgroundColor: Colors.red),
+      SnackBar(content: Text("Erro ao fazer login: Falha na Internet"), backgroundColor: Colors.red),
     );
   }
 }

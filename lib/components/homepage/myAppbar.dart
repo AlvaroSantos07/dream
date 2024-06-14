@@ -23,13 +23,16 @@ class MyAppBar extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-            Colors.transparent,
-            Colors.transparent
-           
+            /*Theme.of(context).colorScheme.inversePrimary,
+            Theme.of(context).colorScheme.onInverseSurface
+           */
+          Colors.transparent,
+          Colors.transparent
           ]),
           boxShadow: [
             BoxShadow(
-      color: Colors.transparent,
+      color: //Theme.of(context).colorScheme.inversePrimary,
+      Colors.transparent,
       spreadRadius: 5,
       blurRadius: 7,
       offset: Offset(0, 3))
@@ -39,7 +42,7 @@ class MyAppBar extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 20),
-          _profileAndICon(context),
+          _profileAndICon(context, theme),
           SizedBox(height: 0),
           Row(children: [
             Padding(
@@ -49,10 +52,10 @@ class MyAppBar extends StatelessWidget {
                   Text(
                     "Hello User!",
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600,
-                    color: Colors.white),
+                    color: Theme.of(context).colorScheme.onSecondary),
                   ),
                   Text("lorem ipsum dolor lorem",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
                   ),
                 ],
               ),
@@ -76,12 +79,16 @@ class MyAppBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide(color: Colors.blue),
                   ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(20)
+                  ),
                   prefixIcon: Icon(
                     Icons.search_sharp,
-                    color: Colors.deepPurple,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                   hintText: "Search",
-                  hintStyle: TextStyle(color: Colors.deepPurple)
+                  hintStyle: TextStyle(color: Colors.black)
                 ),
               ))
             ],
@@ -92,7 +99,7 @@ class MyAppBar extends StatelessWidget {
   }
 }
 
-_profileAndICon(BuildContext context) {
+_profileAndICon(BuildContext context, theme) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
@@ -105,8 +112,8 @@ _profileAndICon(BuildContext context) {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-              Colors.deepPurple,
-              Colors.black
+              Theme.of(context).colorScheme.secondary,
+              Theme.of(context).colorScheme.onPrimary
             ])
           ),
           child: Row(
@@ -117,12 +124,12 @@ _profileAndICon(BuildContext context) {
                   Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
                 },
                 icon: Icon(
-                  Icons.account_circle_outlined,
+                  theme == lightMode? Icons.light_mode_outlined: Icons.dark_mode_outlined,
                   color: Colors.white,
                 ),
               ),
               Text(
-                "Bem vindo User     ",
+                theme == lightMode? "Tema Claro        ":"Tema Escuro      ",
                 style:
                     TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
               )
