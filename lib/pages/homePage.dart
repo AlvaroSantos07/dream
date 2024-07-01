@@ -12,27 +12,39 @@ class homePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       drawer: MyDrawer(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-              Theme.of(context).colorScheme.onPrimary,
-              Theme.of(context).colorScheme.onPrimary,
-              Theme.of(context).colorScheme.onInverseSurface,
-            ])
-          ),
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                Theme.of(context).colorScheme.onPrimary,
+                Theme.of(context).colorScheme.onPrimary,
+                Theme.of(context).colorScheme.onInverseSurface,
+              ])),
           child: Column(
             children: [
               MyAppBar(),
               SizedBox(height: 0),
-              SizedBox(height: 444, width: double.infinity, child: MyListView()),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "   Destaques:",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Icon(
+                    Icons.chevron_right,
+                    color: Theme.of(context).colorScheme.secondary,
+                  )
+                ],
+              ),
+              SizedBox(
+                  height: 444, width: double.infinity, child: MyListView()),
               SizedBox(height: 100)
             ],
           ),

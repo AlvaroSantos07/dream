@@ -10,6 +10,7 @@ ThemeData lightMode = ThemeData(
     onInverseSurface: Colors.white,
     onPrimaryFixed: Colors.red,
     onSecondaryFixed: Colors.black,
-    onTertiary: Colors.red
+    onTertiary: Colors.red,
+    outline: Colors.red
   )
 );

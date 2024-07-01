@@ -14,7 +14,7 @@ class BoxButton extends StatelessWidget {
         width: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(color: Color.fromARGB(255, 0, 0, 255)),
+          border: Border.all(color: Color.fromARGB(255, 255, 0, 0)),
         ),
         child: child,
       ),

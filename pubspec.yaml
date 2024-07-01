@@ -40,11 +40,13 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   salomon_bottom_bar: ^3.3.2
   floaty_navy_bar: ^1.0.5
-  firebase_core: ^2.31.0
-  firebase_auth: ^4.19.5
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.20.0
   cloud_firestore: ^4.17.3
   banner_carousel: ^1.2.1
   flutter_mdi_icons: ^0.1.1
+  flutter_facebook_auth: ^7.0.1
+  google_sign_in: ^6.2.1
 
 flutter_native_splash:
   color: "#00ff00"

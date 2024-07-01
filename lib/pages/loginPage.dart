@@ -17,7 +17,7 @@ class loginPage extends StatelessWidget {
           child: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-          const Color.fromARGB(255, 58, 21, 192),
+          Colors.red,
           Colors.black,
         ])),
         child: Column(
@@ -38,9 +38,9 @@ class loginPage extends StatelessWidget {
 
 _hello() {
   return Padding(
-    padding: EdgeInsets.all(27),
+    padding: EdgeInsets.only(left: 27.0, top: 40),
     child: Text(
-      "Olá \nDreamer",
+      "Bem vindo \nDreamer",
       style: TextStyle(
           fontSize: 20, color: Colors.white, fontWeight: FontWeight.w700),
     ),

@@ -6,8 +6,12 @@ class BuildPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      
+
+      body: Container(
+        child: Center(
+          child: Text("Em Breve Você poderá montar seu pc aqui", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+        ),
+      ),
     );
   }
 }
