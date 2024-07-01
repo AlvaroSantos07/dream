@@ -17,14 +17,19 @@ class Product {
     this.totalPrice = 0
   });
 
-  void incrementQuantity() {
+ void incrementQuantity() {
     quantity++;
     totalPrice += price;
   }
 
-  void decrementQuantity() {
-    quantity --;
-    totalPrice -= quantity;
+  void decreamentQuantity() {
+    quantity--;
+    totalPrice -= price;
+  }
+
+  void initialQuantity() {
+    quantity = 0;
+    totalPrice = 0;
   }
 }
 

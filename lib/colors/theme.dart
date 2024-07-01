@@ -10,6 +10,7 @@ ThemeData darkMode = ThemeData(
     onInverseSurface: Colors.deepPurple,
     onPrimaryFixed: Colors.black,
     onSecondaryFixed: Colors.black,
-    onTertiary: Colors.green
+    onTertiary: Colors.green,
+    outline: Colors.grey
   )
 );

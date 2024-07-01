@@ -1,4 +1,11 @@
+import 'package:dream/class/product.dart';
+import 'package:dream/class/shop.dart';
+import 'package:dream/components/shoppage.dart/shopListViewPc.dart';
+import 'package:dream/components/shoppage.dart/shopListViewperi.dart';
+import 'package:dream/components/tile/myShopTile.dart';
 import 'package:flutter/material.dart';
+import '../tile/myShopTile.dart';
+import 'shopListViewMon.dart';
 
 class Productblock extends StatelessWidget {
   const Productblock({super.key});
@@ -26,7 +33,38 @@ class Productblock extends StatelessWidget {
                 child: Icon(Icons.chevron_right),
               )
             ],
-          )
+          ),
+          SizedBox(child: MyListViewShop()),
+          SizedBox(height: 20,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("   Monitores", style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16
+              ),),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(Icons.chevron_right),
+              )
+            ],
+          ),
+          SizedBox(child: MyListViewMon()),
+          SizedBox(height: 20,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("   Perifericos", style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16
+              ),),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(Icons.chevron_right),
+              )
+            ],
+          ),
+          SizedBox(child: MyListViewPeri())
         ],
       ),
     );
