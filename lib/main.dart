@@ -1,6 +1,7 @@
 import 'package:dream/MainScreen2.dart';
 import 'package:dream/colors/providerTheme.dart';
 import 'package:dream/MainScreen.dart';
+import 'package:dream/pages/ShopPage.dart';
 import 'package:dream/pages/loginPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/loginPage",
+      home: MyMainScreen(),
+      //initialRoute: "/loginPage",
       theme: Provider.of<ThemeProvider>(context).themeData,
       routes: {
         '/loginPage': (context) => loginPage(),

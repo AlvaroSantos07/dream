@@ -1,4 +1,5 @@
 import 'package:dream/components/shoppage.dart/appBar.dart';
+import 'package:dream/components/shoppage.dart/productBlock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mdi_icons/flutter_mdi_icons.dart';
 
@@ -12,20 +13,24 @@ class ShopPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.onPrimary,
         body: Container(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(0.0),
-                child: ShopAppBar(),
-              ),
-              Transform.translate(
-                  offset: Offset(0.0, -35.0), child:
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: _categories(context),
-                  )
-                  )
-            ],
+          child: SingleChildScrollView(
+            
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: ShopAppBar(),
+                ),
+                Transform.translate(
+                    offset: Offset(0.0, -35.0), child:
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: _categories(context),
+                    )
+                    ),
+                    Productblock()
+              ],
+            ),
           ),
         ));
   }
