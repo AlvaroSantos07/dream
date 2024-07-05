@@ -14,7 +14,7 @@ class ShopPage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.onPrimary,
         body: Container(
           child: SingleChildScrollView(
-            
+            scrollDirection: Axis.vertical,
             child: Column(
               children: [
                 Padding(

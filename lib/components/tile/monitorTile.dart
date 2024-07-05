@@ -5,9 +5,9 @@ import '../../class/product.dart';
 import '../../class/shop.dart';
 import '../buttons/iconButton.dart';
 
-class MyShopTile extends StatelessWidget {
+class MyMonitorTile extends StatelessWidget {
   final Product product;
-  const MyShopTile({super.key, required this.product});
+  const MyMonitorTile({super.key, required this.product});
 
   void addCart(BuildContext context) {
     showDialog(
@@ -34,8 +34,8 @@ class MyShopTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 120,
-        width: 185,
+        height: 80,
+        width: 300,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.onPrimary,
           borderRadius: BorderRadius.circular(20),
@@ -43,12 +43,13 @@ class MyShopTile extends StatelessWidget {
         ),
         child: Column(
           children: [
+            SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 150,
-                  width: 150,
+                  height: 120,
+                  width: 160,
                   child: Row(
                     children: [Image.asset(product.imagePath)],
                   ),

@@ -7,102 +7,104 @@ class Shop extends ChangeNotifier {
   final List<Product> shopList = [
     Product(
         name: "Athenas",
-        price: 99.99,
+        price: 599.99,
         description: "PC Básico",
         rating: 4.2,
         imagePath: "assets/pc.png"),
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Ares",
+        price: 1199.99,
+        description: "Pc gamer potente",
+        imagePath: "assets/ares.png"),
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Hera",
+        price: 999.99,
+        description: "PC Gamer com WaterCooler",
+        imagePath: "assets/hera.png"),
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Apolo",
+        price: 819.99,
+        description: "Custo beneficio",
+        imagePath: "assets/apoloo.png"),
   ];
 
 
 final List<Product> shopPc = [
     Product(
         name: "Athenas",
-        price: 99.99,
+        price: 599.99,
         description: "PC Básico",
         rating: 4.2,
         imagePath: "assets/pc.png"),
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
-    Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
-    Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
-  ];final List<Product> shopMon = [
-    Product(
-        name: "Athenas",
-        price: 99.99,
-        description: "PC Básico",
+        name: "Ares",
+        price: 1199.99,
+        description: "PC Gamer potente",
         rating: 4.2,
-        imagePath: "assets/pc.png"),
+        imagePath: "assets/ares.png"),
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Hera",
+        price: 999.99,
+        description: "PC Gamer com WaterCooler",
+        imagePath: "assets/hera.png"),
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Apolo",
+        price: 819.99,
+        description: "Custo beneficio",
+        imagePath: "assets/apoloo.png"),
+    ];
+    final List<Product> shopMon = [
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Monitor Pandora",
+        price: 799.99,
+        description: "Monitor Ultra Wide",
+        rating: 5.0,
+        imagePath: "assets/monitor1.png"),
+    Product(
+        name: "Monitor Pandora",
+        price: 799.99,
+        description: "Monitor Ultra Wide",
+        rating: 5.0,
+        imagePath: "assets/monitor1.png"),
   ];
   final List<Product> shopPeri = [
     Product(
-        name: "Athenas",
-        price: 99.99,
-        description: "PC Básico",
+        name: "Logitech",
+        price: 118.80,
+        description: "Headset de alta\n     qualidade",
         rating: 4.2,
-        imagePath: "assets/pc.png"),
+        imagePath: "assets/fone.png"),   
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Logitech",
+        price: 118.80,
+        description: "Headset de alta\n     qualidade",
+        rating: 4.2,
+        imagePath: "assets/fone.png"),   
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Logitech",
+        price: 118.80,
+        description: "Headset de alta\n     qualidade",
+        rating: 4.2,
+        imagePath: "assets/mouse.png"),   
     Product(
-        name: "PC",
-        price: 99.99,
-        description: "PC basico",
-        imagePath: "assets/pc.png"),
+        name: "Logitech",
+        price: 118.80,
+        description: "Headset de alta\n     qualidade",
+        rating: 4.2,
+        imagePath: "assets/mouse.png"),   
+    Product(
+        name: "Logitech",
+        price: 118.80,
+        description: "Headset de alta\n     qualidade",
+        rating: 4.2,
+        imagePath: "assets/mouse.png"),  
   ];
   List<Product> _cart = [];
 
   List<Product> get shop => shopList;
   List<Product> get shopper => shopPeri;
   List<Product> get shopmon => shopMon;
-  List<Product> get shoppc => shoppc;
+  List<Product> get shoppc => shopPc;
 
   List<Product> get cart => _cart;
 
