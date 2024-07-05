@@ -63,7 +63,21 @@ class _MyMainScreenState extends State<MyMainScreen> {
       ShopPage(),
       BuildPage(),
       CartPage(),
-      Container()
+      Scaffold(
+        appBar: AppBar(
+            title: Text("Recadinho do Programador"),
+            centerTitle: true,
+            backgroundColor: Theme.of(context).colorScheme.secondary),
+        body: Container(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Este app ainda está em desenvolvimento, usem com carinho\nEm caso de sugestões entrar em contato com: (11) 957915480 \nObrigado por testar o Beta do Dream app"),
+              ],
+            ),),
+        ),
+      )
       
     ];
     

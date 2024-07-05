@@ -5,9 +5,9 @@ import '../../class/product.dart';
 import '../../class/shop.dart';
 import '../buttons/iconButton.dart';
 
-class MyShopTile extends StatelessWidget {
+class MyPeriTile extends StatelessWidget {
   final Product product;
-  const MyShopTile({super.key, required this.product});
+  const MyPeriTile({super.key, required this.product});
 
   void addCart(BuildContext context) {
     showDialog(
@@ -43,12 +43,14 @@ class MyShopTile extends StatelessWidget {
         ),
         child: Column(
           children: [
+            SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(width: 20,),
                 Container(
-                  height: 150,
-                  width: 150,
+                  height: 120,
+                  width: 149,
                   child: Row(
                     children: [Image.asset(product.imagePath)],
                   ),
